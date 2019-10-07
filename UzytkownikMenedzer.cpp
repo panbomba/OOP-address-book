@@ -1,4 +1,5 @@
 #include "UzytkownikMenedzer.h"
+#include "Uzytkownik.h""
 
 void UzytkownikMenedzer::rejestracjaUzytkownika()
 {
@@ -70,3 +71,6 @@ void UzytkownikMenedzer::wczytajUzytkownikowZPliku()
 {
     uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
 }
+
+
+

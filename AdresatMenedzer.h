@@ -1,5 +1,5 @@
-#ifndef UZYTKOWNIKMENEDZER_H
-#define UZYTKOWNIKMENEDZER_H
+#ifndef ADRESATMENEDZER_H
+#define  ADRESATMENEDZER_H
 
 #include <iostream>
 #include <vector>
@@ -7,14 +7,14 @@
 #include <fstream>
 #include <sstream>
 
-#include "Uzytkownik.h"
-#include "PlikZUzytkownikami.h"
+#include "Adresat.h"
+//#include "PlikZUzytkownikami.h"
 
 using namespace std;
 
-class UzytkownikMenedzer
+class AdresatMenedzer
 {
-    int idZalogowanegoUzytkownika;
+    /*int idZalogowanegoUzytkownika;
     vector <Uzytkownik> uzytkownicy;
 
     Uzytkownik podajDaneNowegoUzytkownika();
@@ -27,6 +27,8 @@ class UzytkownikMenedzer
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
+    */
+    ;
 
 };
 
