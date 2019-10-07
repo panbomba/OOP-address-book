@@ -1,5 +1,6 @@
 #include "UzytkownikMenedzer.h"
-#include "Uzytkownik.h""
+#include "Uzytkownik.h"
+#include "MetodyPomocnicze.h"
 
 void UzytkownikMenedzer::rejestracjaUzytkownika()
 {
@@ -73,4 +74,44 @@ void UzytkownikMenedzer::wczytajUzytkownikowZPliku()
 }
 
 
+int UzytkownikMenedzer::logowanieUzytkownika()
+{
+    Uzytkownik uzytkownik;
+    MetodyPomocnicze metodyPomocnicze;
 
+    string login1 = "", haslo1 = "";
+
+    cout << endl << "Podaj login: ";
+    login1 = metodyPomocnicze.wczytajLinie();
+    //metodyPomocnicze.wczytajLinie();
+    //uzytkownik.pobierzLogin(MetodyPomocnicze::wczytajLinie());;
+
+    cout << uzytkownik.pobierzLogin(); system("pause");
+
+    vector <Uzytkownik>::iterator itr = uzytkownicy.begin();
+    while (itr != uzytkownicy.end())
+    {
+        if (itr -> pobierzLogin() == login1)
+        {
+            for (int iloscProb = 3; iloscProb > 0; iloscProb--)
+            {
+                cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
+                haslo1 = metodyPomocnicze.wczytajLinie();
+
+                if (itr -> pobierzHaslo() == haslo1)
+                {
+                    cout << endl << "Zalogowales sie." << endl << endl;
+                    system("pause");
+                    return itr -> pobierzId();
+                }
+            }
+            cout << "Wprowadzono 3 razy bledne haslo." << endl;
+            system("pause");
+            return 0;
+        }
+        itr++;
+    }
+    cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
+    system("pause");
+    return 0;
+}
