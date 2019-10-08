@@ -1,6 +1,7 @@
 #include "UzytkownikMenedzer.h"
 #include "Uzytkownik.h"
 #include "MetodyPomocnicze.h"
+#include "PlikZUzytkownikami.h"
 
 void UzytkownikMenedzer::rejestracjaUzytkownika()
 {
@@ -73,7 +74,6 @@ void UzytkownikMenedzer::wczytajUzytkownikowZPliku()
     uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
 }
 
-
 int UzytkownikMenedzer::logowanieUzytkownika()
 {
     Uzytkownik uzytkownik;
@@ -83,8 +83,6 @@ int UzytkownikMenedzer::logowanieUzytkownika()
 
     cout << endl << "Podaj login: ";
     login1 = metodyPomocnicze.wczytajLinie();
-    //metodyPomocnicze.wczytajLinie();
-    //uzytkownik.pobierzLogin(MetodyPomocnicze::wczytajLinie());;
 
     cout << uzytkownik.pobierzLogin(); system("pause");
 
@@ -114,4 +112,24 @@ int UzytkownikMenedzer::logowanieUzytkownika()
     cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
     system("pause");
     return 0;
+}
+
+void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika)
+{
+    MetodyPomocnicze metodyPomocnicze;
+    Uzytkownik uzytkownik;
+    string noweHaslo = "";
+    cout << "Podaj nowe haslo: ";
+    noweHaslo = metodyPomocnicze.wczytajLinie();
+
+    for (vector <Uzytkownik>::iterator itr = uzytkownicy.begin(); itr != uzytkownicy.end(); itr++)
+    {
+        if (itr -> pobierzId() == idZalogowanegoUzytkownika)
+        {
+            itr -> ustawHaslo(noweHaslo);
+            cout << "Haslo zostalo zmienione." << endl << endl;
+            system("pause");
+        }
+    }
+    plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku();
 }
