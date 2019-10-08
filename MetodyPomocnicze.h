@@ -10,6 +10,9 @@ class MetodyPomocnicze
 public:
     static string konwerjsaIntNaString(int liczba);
     string wczytajLinie();
+    string pobierzLiczbe(string tekst, int pozycjaZnaku);
+    int konwersjaStringNaInt(string liczba);
+    int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
 
 };
 

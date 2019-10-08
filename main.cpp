@@ -12,8 +12,8 @@ int main()
 
 
    KsiazkaAdresowa.wypiszWszystkichUzytkownikow();
-   //idZalogowanegoUzytkownika = KsiazkaAdresowa.logowanieUzytkownika();
-   //KsiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+   idZalogowanegoUzytkownika = KsiazkaAdresowa.logowanieUzytkownika();
+   KsiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
    //KsiazkaAdresowa.rejestracjaUzytkownika();
    //KsiazkaAdresowa.rejestracjaUzytkownika();
    KsiazkaAdresowa.wypiszWszystkichUzytkownikow();
