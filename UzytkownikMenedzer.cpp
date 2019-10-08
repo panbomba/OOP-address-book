@@ -130,6 +130,6 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUz
             cout << "Haslo zostalo zmienione." << endl << endl;
             system("pause");
         }
-    }
-    plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku();
+    } // DO WEKTORA ZAPISUJE POPRAWNIE - COS JEST NIE TAK Z PONIZSZA FUNKCJA
+    plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }

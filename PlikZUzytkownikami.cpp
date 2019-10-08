@@ -99,12 +99,12 @@ Uzytkownik PlikZUzytkownikami::pobierzDaneUzytkownika(string daneJednegoUzytkown
     return uzytkownik;
 }
 
-void PlikZUzytkownikami::zapiszWszystkichUzytkownikowDoPliku()
+void PlikZUzytkownikami::zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> &uzytkownicy)
 {
     fstream plikTekstowy;
     string liniaZDanymiUzytkownika = "";
     //Uzytkownik uzytkownik;
-    vector<Uzytkownik> uzytkownicy;
+    //vector<Uzytkownik> uzytkownicy;
     vector <Uzytkownik>::iterator itrKoniec = --uzytkownicy.end();
 
     plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::out);
@@ -114,6 +114,7 @@ void PlikZUzytkownikami::zapiszWszystkichUzytkownikowDoPliku()
         for (vector <Uzytkownik>::iterator itr = uzytkownicy.begin(); itr != uzytkownicy.end(); itr++)
         {
             liniaZDanymiUzytkownika = PlikZUzytkownikami::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(*itr);
+            cout << liniaZDanymiUzytkownika; system("pause");
 
             if (itr == itrKoniec)
             {
