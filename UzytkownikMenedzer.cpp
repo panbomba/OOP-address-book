@@ -69,11 +69,6 @@ void UzytkownikMenedzer::wypiszWszystkichUzytkownikow()
     }
 }
 
-void UzytkownikMenedzer::wczytajUzytkownikowZPliku()
-{
-    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
-}
-
 int UzytkownikMenedzer::logowanieUzytkownika()
 {
     Uzytkownik uzytkownik;
@@ -100,7 +95,8 @@ int UzytkownikMenedzer::logowanieUzytkownika()
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    return itr -> pobierzId();
+                    idZalogowanegoUzytkownika = itr -> pobierzId();
+                    return idZalogowanegoUzytkownika;
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
@@ -114,7 +110,7 @@ int UzytkownikMenedzer::logowanieUzytkownika()
     return 0;
 }
 
-void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika)
+void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
 {
     MetodyPomocnicze metodyPomocnicze;
     Uzytkownik uzytkownik;
@@ -130,6 +126,25 @@ void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUz
             cout << "Haslo zostalo zmienione." << endl << endl;
             system("pause");
         }
-    } // DO WEKTORA ZAPISUJE POPRAWNIE - COS JEST NIE TAK Z PONIZSZA FUNKCJA
+    }
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
+}
+
+bool UzytkownikMenedzer::czyUzytkownikJestZalogowany()
+{
+    if (idZalogowanegoUzytkownika > 0)
+        return true;
+    else
+        return false;
+}
+
+int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika()
+{
+    return idZalogowanegoUzytkownika;
+}
+
+void UzytkownikMenedzer::wylogowanieUzytkownika()
+{
+    idZalogowanegoUzytkownika = 0;
+    //cout << idZalogowanegoUzytkownika; system ("pause");
 }
