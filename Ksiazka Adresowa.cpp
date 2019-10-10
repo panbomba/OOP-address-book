@@ -31,7 +31,7 @@ void KsiazkaAdresowa::wylogowanieUzytkownika()
     uzytkownikMenedzer.wylogowanieUzytkownika();
     delete adresatMenedzer;
     adresatMenedzer = NULL;
-    //cout << uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika(); system ("pause");
+    cout << uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika(); system ("pause");
 }
 
 void KsiazkaAdresowa::dodajAdresata()
