@@ -16,7 +16,6 @@ public:
     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     char wczytajZnak();
     int wczytajLiczbeCalkowita();
-
 };
 
 #endif

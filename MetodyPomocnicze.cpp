@@ -2,8 +2,6 @@
 #include <algorithm>
 #include "MetodyPomocnicze.h"
 
-
-
 string MetodyPomocnicze::konwerjsaIntNaString(int liczba)
 {
     ostringstream ss;

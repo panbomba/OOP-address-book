@@ -78,9 +78,6 @@ int UzytkownikMenedzer::logowanieUzytkownika()
 
     cout << endl << "Podaj login: ";
     cin >> login1;
-    //login1 = metodyPomocnicze.wczytajLinie();
-
-    //cout << uzytkownik.pobierzLogin(); system("pause");
 
     vector <Uzytkownik>::iterator itr = uzytkownicy.begin();
     while (itr != uzytkownicy.end())
@@ -91,7 +88,6 @@ int UzytkownikMenedzer::logowanieUzytkownika()
             {
                 cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
                 cin >> haslo1;
-                //haslo1 = metodyPomocnicze.wczytajLinie();
 
                 if (itr -> pobierzHaslo() == haslo1)
                 {
@@ -148,5 +144,4 @@ int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika()
 void UzytkownikMenedzer::wylogowanieUzytkownika()
 {
     idZalogowanegoUzytkownika = 0;
-    //cout << idZalogowanegoUzytkownika; system ("pause");
 }

@@ -17,7 +17,6 @@ int KsiazkaAdresowa::logowanieUzytkownika()
     {
         adresatMenedzer = new AdresatMenedzer(NAZWA_PLIKU_Z_ADRESATAMI,uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
     }
-    //cout << uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika(); system ("pause");
 }
 
 void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
@@ -30,7 +29,6 @@ void KsiazkaAdresowa::wylogowanieUzytkownika()
     uzytkownikMenedzer.wylogowanieUzytkownika();
     delete adresatMenedzer;
     adresatMenedzer = NULL;
-    //cout << uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika(); system ("pause");
 }
 
 void KsiazkaAdresowa::dodajAdresata()
@@ -102,11 +100,7 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
                 wylogowanieUzytkownika();
             }
     }
-
-
-
     return 0;
-
 }
 
 

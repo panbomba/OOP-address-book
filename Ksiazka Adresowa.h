@@ -20,6 +20,7 @@ public:
          {
         adresatMenedzer = NULL;
     };
+
     ~KsiazkaAdresowa()
     {
         delete adresatMenedzer;
