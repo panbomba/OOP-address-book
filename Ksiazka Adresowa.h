@@ -35,6 +35,7 @@ public:
     void dodajAdresata ();
     void wyswietlWszystkichAdresatow ();
     char wybierzOpcjeZMenuUzytkownika();
+    void usunAdresata();
 
 };
 

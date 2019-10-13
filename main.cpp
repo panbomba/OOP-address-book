@@ -37,16 +37,5 @@ int main()
             exit(0);
         }
     }
-
-    //KsiazkaAdresowa.wypiszWszystkichUzytkownikow();
-    //KsiazkaAdresowa.logowanieUzytkownika();
-    //KsiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
-    //KsiazkaAdresowa.rejestracjaUzytkownika();
-    //KsiazkaAdresowa.dodajAdresata();
-    //KsiazkaAdresowa.wyswietlWszystkichAdresatow();
-    //KsiazkaAdresowa.wylogowanieUzytkownika();
-
-
-
     return 0;
 }

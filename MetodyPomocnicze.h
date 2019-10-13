@@ -14,8 +14,11 @@ public:
     string pobierzLiczbe(string tekst, int pozycjaZnaku);
     int konwersjaStringNaInt(string liczba);
     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
+    int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     char wczytajZnak();
     int wczytajLiczbeCalkowita();
+
+    int podajIdWybranegoAdresata();
 };
 
 #endif

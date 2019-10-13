@@ -1,8 +1,7 @@
 #include "AdresatMenedzer.h"
 #include "Adresat.h"
-//#include "MetodyPomocnicze.h"
+#include "MetodyPomocnicze.h"
 #include "PlikZAdresatami.h"
-
 
 void AdresatMenedzer::dodajAdresata()
 {
@@ -82,6 +81,48 @@ void AdresatMenedzer::wyswietlWszystkichAdresatow()
         cout << endl << "Ksiazka adresowa jest pusta." << endl << endl;
     }
     system("pause");
+}
+
+void AdresatMenedzer::usunAdresata()
+{
+    MetodyPomocnicze metodyPomocnicze;
+
+
+    int idUsuwanegoAdresata = 0;
+
+    system("cls");
+    cout << ">>> USUWANIE WYBRANEGO ADRESATA <<<" << endl << endl;
+    idUsuwanegoAdresata = metodyPomocnicze.podajIdWybranegoAdresata();
+
+    char znak;
+    bool czyIstniejeAdresat = false; //ROZPISAC TO WEWNATRZ TEJ FUNKCJI
+
+    for (vector <Adresat>::iterator itr = adresaci.begin(); itr != adresaci.end(); itr++)
+    {
+        if (itr -> pobierzId() == idUsuwanegoAdresata)
+        {
+            czyIstniejeAdresat = true;
+            cout << endl << "Potwierdz naciskajac klawisz 't': ";
+            znak = metodyPomocnicze.wczytajZnak();
+            if (znak == 't')
+            {
+                //plikZAdresatami.usunWybranaLinieWPliku(idUsuwanegoAdresata);
+                adresaci.erase(itr);
+                cout << endl << endl << "Szukany adresat zostal USUNIETY" << endl << endl;
+                system("pause");
+            }
+            else
+            {
+                cout << endl << endl << "Wybrany adresat NIE zostal usuniety" << endl << endl;
+                system("pause");
+            }
+        }
+    }
+    if (czyIstniejeAdresat == false)
+    {
+        cout << endl << "Nie ma takiego adresata w ksiazce adresowej" << endl << endl;
+        system("pause");
+    }
 }
 
 
