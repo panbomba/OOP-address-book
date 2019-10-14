@@ -95,7 +95,7 @@ void AdresatMenedzer::usunAdresata()
     idUsuwanegoAdresata = metodyPomocnicze.podajIdWybranegoAdresata();
 
     char znak;
-    bool czyIstniejeAdresat = false; //ROZPISAC TO WEWNATRZ TEJ FUNKCJI
+    bool czyIstniejeAdresat = false;
 
     for (vector <Adresat>::iterator itr = adresaci.begin(); itr != adresaci.end(); itr++)
     {
@@ -106,7 +106,7 @@ void AdresatMenedzer::usunAdresata()
             znak = metodyPomocnicze.wczytajZnak();
             if (znak == 't')
             {
-                //plikZAdresatami.usunWybranaLinieWPliku(idUsuwanegoAdresata);
+                plikZAdresatami.usunWybranaLinieWPliku(idUsuwanegoAdresata);
                 adresaci.erase(itr);
                 cout << endl << endl << "Szukany adresat zostal USUNIETY" << endl << endl;
                 system("pause");
@@ -123,6 +123,88 @@ void AdresatMenedzer::usunAdresata()
         cout << endl << "Nie ma takiego adresata w ksiazce adresowej" << endl << endl;
         system("pause");
     }
+}
+
+void AdresatMenedzer::zaktualizujDaneWybranegoAdresata(Adresat adresat)
+{
+    //string liniaZDanymiAdresata = "";
+
+    //liniaZDanymiAdresata = plikZAdresatami.zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat); //FUNKJCA MA ZADZIALAC TYLKO JAK NATRAFI NA ID ZMIENIANEGO KONTAKTU
+    plikZAdresatami.edytujWybranaLinieWPliku(adresat); //ZAIMPLEMENTOWAC W PLIKU Z PRACA NA PLIKACH
+    cout << endl << "Dane zostaly zaktualizowane." << endl << endl;
+}
+
+
+void AdresatMenedzer::edytujAdresata()
+{
+    MetodyPomocnicze metodyPomocnicze;
+    system("cls");
+    Adresat adresat;
+    int idEdytowanegoAdresata = 0;
+    string liniaZDanymiAdresata = "";
+    string imie, nazwisko, numerTelefonu, email, adres;
+
+    cout << ">>> EDYCJA WYBRANEGO ADRESATA <<<" << endl << endl;
+    idEdytowanegoAdresata = metodyPomocnicze.podajIdWybranegoAdresata();
+
+    char wybor;
+    bool czyIstniejeAdresat = false;
+
+    for (int i = 0; i < adresaci.size(); i++)
+    {
+        if (adresaci[i].pobierzId() == idEdytowanegoAdresata)
+        {
+            czyIstniejeAdresat = true;
+            wybor = metodyPomocnicze.wybierzOpcjeZMenuEdycja();
+
+            switch (wybor)
+            {
+            case '1':
+                cout << "Podaj nowe imie: ";
+                imie = metodyPomocnicze.wczytajLinie();
+                imie = metodyPomocnicze.zamienPierwszaLitereNaDuzaAPozostaleNaMale(imie);
+                adresaci[i].ustawImie(imie);
+                zaktualizujDaneWybranegoAdresata(adresaci[i]);
+                break;
+            case '2':
+                cout << "Podaj nowe nazwisko: ";
+                nazwisko = metodyPomocnicze.wczytajLinie();
+                nazwisko = metodyPomocnicze.zamienPierwszaLitereNaDuzaAPozostaleNaMale(nazwisko);
+                adresaci[i].ustawNazwisko(nazwisko);
+                zaktualizujDaneWybranegoAdresata(adresaci[i]);
+                break;
+            case '3':
+                cout << "Podaj nowy numer telefonu: ";
+                numerTelefonu = metodyPomocnicze.wczytajLinie();
+                adresaci[i].ustawNumerTelefonu(numerTelefonu);
+                zaktualizujDaneWybranegoAdresata(adresaci[i]);
+                break;
+            case '4':
+                cout << "Podaj nowy email: ";
+                email = metodyPomocnicze.wczytajLinie();
+                adresaci[i].ustawEmail(email);
+                zaktualizujDaneWybranegoAdresata(adresaci[i]);
+                break;
+            case '5':
+                cout << "Podaj nowy adres zamieszkania: ";
+                adres = metodyPomocnicze.wczytajLinie();
+                adresaci[i].ustawAdres(adres);
+                zaktualizujDaneWybranegoAdresata(adresaci[i]);
+                break;
+            case '6':
+                cout << endl << "Powrot do menu uzytkownika" << endl << endl;
+                break;
+            default:
+                cout << endl << "Nie ma takiej opcji w menu! Powrot do menu uzytkownika." << endl << endl;
+                break;
+            }
+        }
+    }
+    if (czyIstniejeAdresat == false)
+    {
+        cout << endl << "Nie ma takiego adresata." << endl << endl;
+    }
+    system("pause");
 }
 
 

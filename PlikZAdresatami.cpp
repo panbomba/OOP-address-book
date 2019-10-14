@@ -226,3 +226,40 @@ void PlikZAdresatami::usunWybranaLinieWPliku(int idUsuwanegoAdresata)
     }
 }
 
+void PlikZAdresatami::edytujWybranaLinieWPliku(Adresat adresat)
+{
+    MetodyPomocnicze metodyPomocnicze;
+    fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
+    string wczytanaLinia = "";
+    int idWczytaneZPliku = 0;
+
+    odczytywanyPlikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);
+    tymczasowyPlikTekstowy.open(nazwaTymczasowegoPlikuZAdresatami.c_str(), ios::out | ios::app);
+
+    if (odczytywanyPlikTekstowy.good() == true)
+    {
+        while (getline(odczytywanyPlikTekstowy, wczytanaLinia))
+        {
+            idWczytaneZPliku = metodyPomocnicze.pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia);
+
+            if (idWczytaneZPliku != adresat.pobierzId())
+            {
+                tymczasowyPlikTekstowy << wczytanaLinia << endl;
+            }
+            else if (idWczytaneZPliku == adresat.pobierzId())
+            {
+                //cout << adresat.pobierzImie(); system ("pause");
+                wczytanaLinia = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
+
+                tymczasowyPlikTekstowy << wczytanaLinia << endl;
+            }
+            // TUTAJ FUNKCJA PODMIENIAJACA LINIE WEDLUG DANEJ
+        }
+        odczytywanyPlikTekstowy.close();
+        tymczasowyPlikTekstowy.close();
+
+        usunPlik(NAZWA_PLIKU_Z_ADRESATAMI);
+        zmienNazwePliku(nazwaTymczasowegoPlikuZAdresatami, NAZWA_PLIKU_Z_ADRESATAMI);
+    }
+}
+

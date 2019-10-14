@@ -19,6 +19,7 @@ public:
     int wczytajLiczbeCalkowita();
 
     int podajIdWybranegoAdresata();
+    char wybierzOpcjeZMenuEdycja();
 };
 
 #endif

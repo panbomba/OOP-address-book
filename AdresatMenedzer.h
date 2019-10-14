@@ -30,6 +30,9 @@ class AdresatMenedzer
     void wyswietlWszystkichAdresatow();
 
     void usunAdresata();
+    void edytujAdresata();
+    void zaktualizujDaneWybranegoAdresata(Adresat adresat);
+
 };
 
 #endif
