@@ -64,7 +64,7 @@ int MetodyPomocnicze::pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(stri
 
 char MetodyPomocnicze::wczytajZnak()
 {
-        string wejscie = "";
+    string wejscie = "";
     char znak  = {0};
 
     while (true)

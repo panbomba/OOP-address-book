@@ -66,8 +66,6 @@ Adresat PlikZAdresatami::pobierzDaneAdresata(string daneAdresataOddzielonePionow
     int id, idUzytkownika;
     string imie, nazwisko, numerTelefonu, email, adres;
     int numerPojedynczejDanejAdresata = 1;
-    //string imie, nazwisko, numerTelefonu, email, adres;
-    //int id, idUzytkownika;
 
     for (int pozycjaZnaku = 0; pozycjaZnaku < daneAdresataOddzielonePionowymiKreskami.length(); pozycjaZnaku++)
     {
