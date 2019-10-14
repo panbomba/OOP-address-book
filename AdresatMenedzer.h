@@ -28,7 +28,6 @@ class AdresatMenedzer
     };
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
-
     void usunAdresata();
     void edytujAdresata();
     void zaktualizujDaneWybranegoAdresata(Adresat adresat);

@@ -34,7 +34,6 @@ void KsiazkaAdresowa::edytujAdresata()
     adresatMenedzer->edytujAdresata();
 }
 
-
 void KsiazkaAdresowa::wylogowanieUzytkownika()
 {
     uzytkownikMenedzer.wylogowanieUzytkownika();

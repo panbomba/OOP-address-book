@@ -98,7 +98,6 @@ int MetodyPomocnicze::wczytajLiczbeCalkowita()
     return liczba;
 }
 
-
 int MetodyPomocnicze::podajIdWybranegoAdresata()
 {
     int idWybranegoAdresata = 0;

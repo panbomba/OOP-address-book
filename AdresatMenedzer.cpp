@@ -86,8 +86,6 @@ void AdresatMenedzer::wyswietlWszystkichAdresatow()
 void AdresatMenedzer::usunAdresata()
 {
     MetodyPomocnicze metodyPomocnicze;
-
-
     int idUsuwanegoAdresata = 0;
 
     system("cls");
@@ -127,13 +125,9 @@ void AdresatMenedzer::usunAdresata()
 
 void AdresatMenedzer::zaktualizujDaneWybranegoAdresata(Adresat adresat)
 {
-    //string liniaZDanymiAdresata = "";
-
-    //liniaZDanymiAdresata = plikZAdresatami.zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat); //FUNKJCA MA ZADZIALAC TYLKO JAK NATRAFI NA ID ZMIENIANEGO KONTAKTU
-    plikZAdresatami.edytujWybranaLinieWPliku(adresat); //ZAIMPLEMENTOWAC W PLIKU Z PRACA NA PLIKACH
+    plikZAdresatami.edytujWybranaLinieWPliku(adresat);
     cout << endl << "Dane zostaly zaktualizowane." << endl << endl;
 }
-
 
 void AdresatMenedzer::edytujAdresata()
 {

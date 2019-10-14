@@ -212,9 +212,13 @@ void PlikZAdresatami::usunWybranaLinieWPliku(int idUsuwanegoAdresata)
         {
             idWczytaneZPliku = metodyPomocnicze.pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia);
 
-            if (idWczytaneZPliku != idUsuwanegoAdresata)
+            if (((czyPlikJestPusty(tymczasowyPlikTekstowy) == true)) && (idWczytaneZPliku != idUsuwanegoAdresata))
             {
-                tymczasowyPlikTekstowy << wczytanaLinia << endl;
+                tymczasowyPlikTekstowy << wczytanaLinia;
+            }
+            else if (((czyPlikJestPusty(tymczasowyPlikTekstowy) == false)) && (idWczytaneZPliku != idUsuwanegoAdresata))
+            {
+                 tymczasowyPlikTekstowy << endl << wczytanaLinia ;
             }
         }
 
@@ -248,12 +252,9 @@ void PlikZAdresatami::edytujWybranaLinieWPliku(Adresat adresat)
             }
             else if (idWczytaneZPliku == adresat.pobierzId())
             {
-                //cout << adresat.pobierzImie(); system ("pause");
                 wczytanaLinia = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
-
                 tymczasowyPlikTekstowy << wczytanaLinia << endl;
             }
-            // TUTAJ FUNKCJA PODMIENIAJACA LINIE WEDLUG DANEJ
         }
         odczytywanyPlikTekstowy.close();
         tymczasowyPlikTekstowy.close();

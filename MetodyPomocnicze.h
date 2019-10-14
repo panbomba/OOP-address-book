@@ -17,7 +17,6 @@ public:
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     char wczytajZnak();
     int wczytajLiczbeCalkowita();
-
     int podajIdWybranegoAdresata();
     char wybierzOpcjeZMenuEdycja();
 };
