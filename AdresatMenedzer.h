@@ -31,7 +31,6 @@ class AdresatMenedzer
     void usunAdresata();
     void edytujAdresata();
     void zaktualizujDaneWybranegoAdresata(Adresat adresat);
-
 };
 
 #endif
