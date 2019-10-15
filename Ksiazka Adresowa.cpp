@@ -82,7 +82,6 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
     cout << "8. Wyloguj sie" << endl;
     cout << "---------------------------" << endl;
     cout << "Twoj wybor: ";
-    cin >> metodyPomocnicze.wczytajZnak();
     wybor = metodyPomocnicze.wczytajZnak();
                    switch (wybor)
             {
