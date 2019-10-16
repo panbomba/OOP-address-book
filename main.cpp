@@ -8,7 +8,7 @@ int main()
     char wybor;
     KsiazkaAdresowa KsiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
 
-        while (true)
+    while (true)
     {
         system("cls");
         cout << "KSIAZKA ADRESOWA" << endl << endl;

@@ -83,7 +83,7 @@ char MetodyPomocnicze::wczytajZnak()
 
 int MetodyPomocnicze::wczytajLiczbeCalkowita()
 {
-        string wejscie = "";
+    string wejscie = "";
     int liczba = 0;
 
     while (true)
